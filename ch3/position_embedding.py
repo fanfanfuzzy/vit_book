@@ -20,7 +20,7 @@ args = parser.parse_args()
 model = create_model(args.model, pretrained=False)
 # 学習済みモデルを読み込む
 #finetune = os.path.join('./path/to/file.pth')
-checkpoint = torch.load(args.checkpoint, map_location='cpu')
+checkpoint = torch.load(args.checkpoint, map_location='cpu', weights_only=False)
 model.load_state_dict(checkpoint["model"])
 model.eval()
 
