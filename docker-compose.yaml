@@ -12,8 +12,7 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
     volumes:
-      - ./:/workspace
-      - ./data:/workspace/data
+      - /data/igarashi/projects/2510_vit_book:/workspace
     ports:
       - "8888:8888"
     shm_size: '8gb'
